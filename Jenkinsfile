@@ -34,11 +34,11 @@ pipeline {
                 mvn sonar:sonar ^
                 -Dsonar.projectKey=Maven_Coverage ^
                 -Dsonar.sources=src/main/java/com/example/automation/LoginPage.java ^
-                -Dsonar.tests=src/test/java ^
+                -Dsonar.tests=src/test/java/com/example/automation/LoginAutomationTest.java ^
                 -Dsonar.projectName="Maven_Coverage" ^
                 -Dsonar.host.url=http://localhost:9000 ^
                 -Dsonar.token=%SONAR_TOKEN% ^
-                -Dsonar.coverage.jacoco.xmlReportPaths=target/Jacoco/jacoco.xml
+                -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco.xml
                 '''
             }
         }
