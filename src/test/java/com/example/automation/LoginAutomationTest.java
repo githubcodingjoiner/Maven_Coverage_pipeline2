@@ -3,8 +3,8 @@ package com.example;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.junit.jupiter.api.Test;
@@ -17,12 +17,12 @@ public class LoginAutomationTest {
 
     @Test
     public void testLogin() {
-        // Set the path to Edge WebDriver
-        String edgeDriverPath = "C:\\Program Files\\Edge_driver\\msedgedriver.exe";
-        System.setProperty("webdriver.edge.driver", edgeDriverPath);
+        // Set the path to ChromeDriver
+        String chromeDriverPath = "C:\\Program Files\\chromedriver\\chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 
-        // Configure EdgeOptions to avoid session issues
-        EdgeOptions options = new EdgeOptions();
+        // Configure ChromeOptions to avoid session issues
+        ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-gpu");
         options.addArguments("--no-sandbox");
@@ -31,8 +31,8 @@ public class LoginAutomationTest {
         WebDriver driver = null;
 
         try {
-            // Initialize Edge WebDriver with options
-            driver = new EdgeDriver(options);
+            // Initialize Chrome WebDriver with options
+            driver = new ChromeDriver(options);
 
             // Navigate to the login page
             driver.get("https://the-internet.herokuapp.com/login");
