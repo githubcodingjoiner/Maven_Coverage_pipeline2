@@ -18,7 +18,7 @@ public class LoginAutomationTest {
     @Test
     public void testLogin() {
         // Set the path to Edge WebDriver
-        String edgeDriverPath = "C:\\Program Files\\msedgedriver.exe";
+        String edgeDriverPath = "Downloads\\msedgedriver.exe";
         System.setProperty("webdriver.edge.driver", edgeDriverPath);
 
         // Configure EdgeOptions to avoid session issues
