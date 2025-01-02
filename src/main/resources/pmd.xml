@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset xmlns="http://pmd.sourceforge.net/ruleset/1.0.0"
+<ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
          name="Example Ruleset"
-         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/1.0.0 http://pmd.sourceforge.net/ruleset_1_0_0.xsd"
-         xsi:noNamespaceSchemaLocation="http://pmd.sourceforge.net/ruleset_1_0_0.xsd">
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <description>
-        PMD Ruleset for detecting code quality issues in the project
+        PMD Ruleset for detecting code quality issues in the project.
     </description>
 
     <!-- Rule for avoiding empty catch blocks -->
     <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
-    
-    <!-- Use alternative rule for detecting unused imports -->
-    <rule ref="category/java/imports.xml/UnusedImports"/>
-    
+
+    <!-- Rule for detecting unused imports -->
+    <rule ref="rulesets/java/imports.xml/UnusedImports"/>
+
     <!-- Rule for detecting unnecessary object creation -->
-    <!-- Example replacement: <rule ref="category/java/design.xml/AvoidReassigningParameters"/> -->
-    
-    <!-- Removed DuplicatedCode rule, consider using a different rule such as: -->
+    <rule ref="category/java/design.xml/AvoidReassigningParameters"/>
+
+    <!-- Rule to detect methods with too many lines of code -->
     <rule ref="category/java/cpd.xml/TooManyMethods"/>
-    
+
     <!-- Rule to ensure proper usage of constants instead of magic values -->
     <rule ref="category/java/design.xml/AvoidUsingHardCodedIP"/>
 </ruleset>
