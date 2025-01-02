@@ -34,6 +34,7 @@
 
     <build>
         <plugins>
+            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -44,6 +45,8 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
+
+            <!-- Surefire Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -52,6 +55,8 @@
                     <useModulePath>false</useModulePath>
                 </configuration>
             </plugin>
+
+            <!-- Jacoco Plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -69,39 +74,38 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
-                        <configuration>
-                            <dataFile>${project.build.directory}/jacoco.exec</dataFile>
-                            <outputDirectory>${project.build.directory}/site/jacoco</outputDirectory>
-                            <reports>
-                                <xml>true</xml>
-                                <html>true</html>
-                            </reports>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Checkstyle Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.2.0</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
+                    <failOnViolation>true</failOnViolation>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>validate</phase>
                         <goals>
                             <goal>check</goal>
                         </goals>
-                        <configuration>
-                            <configLocation>checkstyle.xml</configLocation>
-                            <encoding>UTF-8</encoding>
-                            <failOnViolation>true</failOnViolation>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- PMD Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.21.0</version>
+                <configuration>
+                    <failOnViolation>true</failOnViolation>
+                </configuration>
                 <executions>
                     <execution>
                         <phase>validate</phase>
@@ -109,10 +113,6 @@
                             <goal>pmd</goal>
                             <goal>cpd-check</goal>
                         </goals>
-                        <configuration>
-                            <linkXref>false</linkXref>
-                            <failOnViolation>true</failOnViolation>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
