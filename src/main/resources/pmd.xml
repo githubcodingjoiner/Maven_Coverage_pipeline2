@@ -11,9 +11,9 @@
     <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
     
     <!-- Updated rule for detecting unused imports (valid PMD rule) -->
-    <rule ref="rulesets/java/imports.xml/UnusedImports"/>
-    
-    <!-- Rule for detecting unnecessary object creation -->
+    <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+
+         <!-- Rule for detecting unnecessary object creation -->
     <rule ref="category/java/design.xml/UnnecessaryObjectCreation"/>
     
     <!-- Rule for detecting duplicated code -->
@@ -22,3 +22,4 @@
     <!-- Rule to ensure proper usage of constants instead of magic values -->
     <rule ref="category/java/design.xml/AvoidUsingHardCodedIP"/>
 </ruleset>
+
