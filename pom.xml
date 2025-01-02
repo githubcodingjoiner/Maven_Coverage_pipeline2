@@ -116,6 +116,9 @@
                 </executions>
                 <configuration>
                     <failOnViolation>true</failOnViolation>
+                    <rulesets>
+                        <ruleset>src/main/resources/pmd.xml</ruleset> <!-- Reference to your custom pmd.xml -->
+                    </rulesets>
                 </configuration>
             </plugin>
         </plugins>
