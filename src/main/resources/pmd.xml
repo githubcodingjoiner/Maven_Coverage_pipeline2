@@ -9,12 +9,16 @@
 
     <!-- Rule for avoiding empty catch blocks -->
     <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
-    <!-- Rule for detecting unused imports -->
+    
+    <!-- Rule for detecting unused imports (updated path) -->
     <rule ref="category/java/imports.xml/UnusedImports"/>
+    
     <!-- Rule for detecting unnecessary object creation -->
     <rule ref="category/java/design.xml/UnnecessaryObjectCreation"/>
+    
     <!-- Rule for detecting duplicated code -->
     <rule ref="category/java/cpd.xml/DuplicatedCode"/>
+    
     <!-- Rule to ensure proper usage of constants instead of magic values -->
     <rule ref="category/java/design.xml/AvoidUsingHardCodedIP"/>
 </ruleset>
