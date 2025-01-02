@@ -7,6 +7,10 @@
             <module name="MethodName">
                 <property name="format" value="^[a-z][a-zA-Z0-9]*$"/>
             </module>
+            <!-- Enforce class naming convention -->
+            <module name="ClassName"/>
+            <!-- Ensure that each class has a javadoc comment -->
+            <module name="JavadocType"/>
             <!-- Check for file tab characters -->
             <module name="FileTabCharacter"/>
             <!-- Enforce line length limit (100 characters) -->
@@ -14,15 +18,21 @@
                 <property name="max" value="100"/>
                 <property name="ignorePattern" value="^package|^import"/>
             </module>
-            <!-- Enforce usage of spaces for indentation -->
+            <!-- Ensure that methods are not too large -->
+            <module name="MethodLength">
+                <property name="max" value="50"/>
+            </module>
+            <!-- Ensure proper indentation -->
             <module name="Indentation">
                 <property name="basicOffset" value="4"/>
                 <property name="lineWrappingIndentation" value="4"/>
             </module>
-            <!-- Enforce that class names start with an uppercase letter -->
-            <module name="ClassName"/>
-            <!-- Ensure that each class has a javadoc comment -->
-            <module name="JavadocType"/>
+            <!-- Avoid usage of magic numbers -->
+            <module name="MagicNumber">
+                <property name="ignoreNumbers" value="0,1"/>
+            </module>
+            <!-- Ensure proper javadoc for method -->
+            <module name="JavadocMethod"/>
         </module>
     </module>
 </configuration>
