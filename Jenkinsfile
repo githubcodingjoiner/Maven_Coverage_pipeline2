@@ -20,7 +20,7 @@ pipeline {
             steps {
                 bat '''
                 echo "Running tests with Jacoco coverage using Maven..."
-                mvn clean verify -Pcoverage
+                mvn clean verify
                 '''
             }
         }
