@@ -10,10 +10,9 @@
     <!-- Rule for avoiding empty catch blocks -->
     <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
     
-    <!-- Corrected rule for detecting unused imports -->
-    <!-- This is a valid rule available in PMD -->
-    <rule ref="category/java/imports.xml/UnusedImports"/>
-
+    <!-- Updated rule for detecting unused imports (valid PMD rule) -->
+    <rule ref="rulesets/java/imports.xml/UnusedImports"/>
+    
     <!-- Rule for detecting unnecessary object creation -->
     <rule ref="category/java/design.xml/UnnecessaryObjectCreation"/>
     
