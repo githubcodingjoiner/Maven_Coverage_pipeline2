@@ -22,6 +22,7 @@ pipeline {
                 '''
             }
         }
+
         stage('Coverage Analysis') {
             steps {
                 bat '''
@@ -42,9 +43,9 @@ pipeline {
                 -Dsonar.tests=src/test/java ^
                 -Dsonar.projectName="Maven_Coverage" ^
                 -Dsonar.host.url=http://localhost:9000 ^
-                -Dsonar.token=%SONAR_TOKEN% ^
+                -Dsonar.token=%SONAR_TOKEN%
                 '''
-                 }
+            }
         }
     }
 
