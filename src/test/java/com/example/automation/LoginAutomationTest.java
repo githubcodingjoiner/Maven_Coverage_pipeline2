@@ -15,7 +15,7 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest(classes = AutomationApplication.class)
+@SpringBootTest
 public class LoginAutomationTest {
 
     @Autowired
@@ -23,7 +23,7 @@ public class LoginAutomationTest {
 
     @Test
     public void testLogin() {
-        // Configure ChromeDriver
+        // ChromeDriver configuration
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
         options.addArguments("--disable-gpu");
@@ -37,12 +37,12 @@ public class LoginAutomationTest {
             // Open login page
             loginPage.openLoginPage("https://the-internet.herokuapp.com/login");
 
-            // Interact with login page
+            // Enter login credentials
             loginPage.enterUsername("tomsmith");
             loginPage.enterPassword("SuperSecretPassword!");
             loginPage.clickLoginButton();
 
-            // Wait for success message
+            // Verify login success
             WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flash")));
             assertTrue(successMessage.getText().contains("You logged into a secure area!"),
                     "Login success message not found or incorrect!");
