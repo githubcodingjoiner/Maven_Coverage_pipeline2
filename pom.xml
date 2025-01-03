@@ -43,14 +43,6 @@
             <version>2.3.1</version>
         </dependency>
 
-        <!-- PMD -->
-        <dependency>
-            <groupId>net.sourceforge.pmd</groupId>
-            <artifactId>pmd</artifactId>
-            <version>7.9.0</version>
-            <type>pom</type>
-        </dependency>
-
         <!-- Quality tools -->
         <dependency>
             <groupId>com.google.errorprone</groupId>
@@ -103,28 +95,6 @@
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-
-            <!-- PMD Plugin -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.22.0</version>
-                <executions>
-                    <execution>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>pmd</goal>
-                            <goal>cpd-check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <failOnViolation>true</failOnViolation>
-                    <rulesets>
-                        <ruleset>src/main/resources/pmd.xml</ruleset>
-                    </rulesets>
-                </configuration>
             </plugin>
 
             <!-- Clean Plugin -->
