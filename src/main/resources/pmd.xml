@@ -27,7 +27,7 @@
     <rule ref="category/java/performance.xml/AvoidInstantiatingObjectsInLoops"/>
 
     <!-- Security -->
-    <rule ref="category/java/security.xml/AvoidHardCodedPasswords"/>
+    <rule ref="category/java/errorprone.xml/AvoidUsingHardCodedIP"/>
 
     <!-- Multithreading -->
     <rule ref="category/java/multithreading.xml/AvoidThreadGroup"/>
