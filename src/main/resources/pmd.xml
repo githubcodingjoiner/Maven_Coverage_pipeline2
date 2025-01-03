@@ -14,21 +14,37 @@
     <rule ref="category/java/errorprone.xml/NullDereference"/>
 
     <!-- Best practices -->
-    <rule ref="category/java/bestpractices.xml/AvoidPrintStackTrace"/>
-    <rule ref="category/java/bestpractices.xml/UseTryWithResources"/>
+    <rule ref="category/java/bestpractices.xml/AccessorClassGeneration"/>
+    <rule ref="category/java/bestpractices.xml/AccessorMethodGeneration"/>
+    <rule ref="category/java/bestpractices.xml/AvoidReassigningCatchVariables"/>
+    <!-- AvoidUsingHardCodedIP might not exist; consider an alternative or custom rule -->
+    <rule ref="category/java/bestpractices.xml/UseStaticImports"/>
     <rule ref="category/java/bestpractices.xml/UnusedImports"/>
-    
+
     <!-- Code style -->
-    <rule ref="category/java/codestyle.xml/MethodNamingConventions"/>
-    <rule ref="category/java/codestyle.xml/FieldNamingConventions"/>
     <rule ref="category/java/codestyle.xml/ClassNamingConventions"/>
-    
+    <rule ref="category/java/codestyle.xml/FieldNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/FormalParameterNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/MethodNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/PackageNamingConventions"/>
+
     <!-- Performance -->
     <rule ref="category/java/performance.xml/AvoidInstantiatingObjectsInLoops"/>
-
-    <!-- Security -->
-    <rule ref="category/java/errorprone.xml/AvoidUsingHardCodedIP"/>
+    <rule ref="category/java/performance.xml/MinimizeArrayCopies"/>
 
     <!-- Multithreading -->
     <rule ref="category/java/multithreading.xml/AvoidThreadGroup"/>
+
+    <!-- Security -->
+    <rule ref="category/java/security.xml/AvoidEscapedCharactersInString"/>
+    <rule ref="category/java/security.xml/SQLInjection"/>
+    <rule ref="category/java/security.xml/HardCodedPassword"/>
+
+    <!-- Duplicates -->
+    <rule ref="category/java/duplicatedcode.xml/ExcessiveMethodLength"/>
+    <rule ref="category/java/duplicatedcode.xml/ExcessiveClassLength"/>
+
+    <!-- Miscellaneous -->
+    <rule ref="category/java/misc.xml/FinalClass"/>
+    <rule ref="category/java/misc.xml/FinalMethod"/>
 </ruleset>
