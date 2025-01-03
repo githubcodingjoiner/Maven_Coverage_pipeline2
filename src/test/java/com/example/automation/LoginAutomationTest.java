@@ -1,8 +1,11 @@
 package com.example.automation;
-import org.openqa.selenium.By;
+
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,17 +15,22 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest
+@SpringBootTest(classes = AutomationApplication.class)
 public class LoginAutomationTest {
-
-    @Autowired
-    private WebDriver driver;
 
     @Autowired
     private LoginPage loginPage;
 
     @Test
     public void testLogin() {
+        // Configure ChromeDriver
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--remote-allow-origins=*");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+
+        WebDriver driver = new ChromeDriver(options);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
         try {
@@ -38,6 +46,7 @@ public class LoginAutomationTest {
             WebElement successMessage = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("flash")));
             assertTrue(successMessage.getText().contains("You logged into a secure area!"),
                     "Login success message not found or incorrect!");
+
         } finally {
             if (driver != null) {
                 driver.quit();
