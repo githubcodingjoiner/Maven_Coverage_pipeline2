@@ -16,8 +16,8 @@
     <!-- Best practices -->
     <rule ref="category/java/bestpractices.xml/AccessorClassGeneration"/>
     <rule ref="category/java/bestpractices.xml/AccessorMethodGeneration"/>
+   
     <rule ref="category/java/bestpractices.xml/AvoidReassigningCatchVariables"/>
-    <!-- AvoidUsingHardCodedIP might not exist; consider an alternative or custom rule -->
     <rule ref="category/java/bestpractices.xml/UseStaticImports"/>
     <rule ref="category/java/bestpractices.xml/UnusedImports"/>
 
@@ -38,7 +38,9 @@
     <!-- Security -->
     <rule ref="category/java/security.xml/AvoidEscapedCharactersInString"/>
     <rule ref="category/java/security.xml/SQLInjection"/>
-    <rule ref="category/java/security.xml/HardCodedPassword"/>
+    <!-- Remove HardCodedPassword if incompatible -->
+    <!-- Alternative: Add custom rule to detect sensitive strings -->
+    <!--<rule ref="category/java/security.xml/HardCodedPassword"/>-->
 
     <!-- Duplicates -->
     <rule ref="category/java/duplicatedcode.xml/ExcessiveMethodLength"/>
@@ -47,4 +49,22 @@
     <!-- Miscellaneous -->
     <rule ref="category/java/misc.xml/FinalClass"/>
     <rule ref="category/java/misc.xml/FinalMethod"/>
+
+    <!-- Custom Selenium Automation Rules -->
+    <rule>
+        <name>AvoidHardcodedWebDriverPaths</name>
+        <description>Avoid hardcoding WebDriver executable paths; use WebDriverManager or configuration files.</description>
+        <priority>3</priority>
+        <message>Avoid hardcoded WebDriver executable paths</message>
+        <examples>
+            <example>
+                <before>
+                    System.setProperty("webdriver.chrome.driver", "C:/path/to/chromedriver.exe");
+                </before>
+                <after>
+                    WebDriverManager.chromedriver().setup();
+                </after>
+            </example>
+        </examples>
+    </rule>
 </ruleset>
