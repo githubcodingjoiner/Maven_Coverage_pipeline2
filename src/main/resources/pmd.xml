@@ -10,15 +10,9 @@
     <!-- Rule for avoiding empty catch blocks -->
     <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
 
-    <!-- Rule for detecting unused imports -->
-    <rule ref="rulesets/java/imports.xml/UnusedImports"/>
-
-    <!-- Rule to detect methods with too many lines of code -->
-    <rule ref="category/java/cpd.xml/TooManyMethods"/>
+    <!-- Rule for detecting unused imports (updated to avoid deprecation) -->
+    <rule ref="category/java/bestpractices.xml/UnusedImports"/>
 
     <!-- Rule to ensure proper usage of constants instead of magic values -->
     <rule ref="category/java/design.xml/AvoidUsingHardCodedIP"/>
-
-    <!-- Optional: Replace with another rule if AvoidReassigningParameters is unavailable -->
-    <!-- <rule ref="category/java/bestpractices.xml/UseStringBufferForStringAppends"/> -->
 </ruleset>
