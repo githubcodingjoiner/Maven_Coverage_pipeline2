@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>automation</artifactId>
+    <artifactId>Maven_Coverage_pipeline2</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Automation Project</name>
+    <name>Maven_Coverage_pipeline2</name>
     <description>Maven Spring Boot Project for Automation Testing</description>
 
     <parent>
