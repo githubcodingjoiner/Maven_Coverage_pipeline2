@@ -1,18 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
-         name="Example Ruleset"
+         name="Login Automation Test Ruleset"
          xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <description>
-        PMD Ruleset for detecting code quality issues in the project.
+        PMD Ruleset for ensuring code quality in Selenium-based test automation.
     </description>
 
-    <!-- Rule for avoiding empty catch blocks -->
+    <!-- Error-prone coding practices -->
     <rule ref="category/java/errorprone.xml/EmptyCatchBlock"/>
+    <rule ref="category/java/errorprone.xml/UnusedLocalVariable"/>
+    <rule ref="category/java/errorprone.xml/NullAssignment"/>
+    <rule ref="category/java/errorprone.xml/NullDereference"/>
 
-    <!-- Rule for detecting unused imports (updated to avoid deprecation) -->
+    <!-- Best practices -->
+    <rule ref="category/java/bestpractices.xml/AvoidPrintStackTrace"/>
+    <rule ref="category/java/bestpractices.xml/UseTryWithResources"/>
     <rule ref="category/java/bestpractices.xml/UnusedImports"/>
+    
+    <!-- Code style -->
+    <rule ref="category/java/codestyle.xml/MethodNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/FieldNamingConventions"/>
+    <rule ref="category/java/codestyle.xml/ClassNamingConventions"/>
+    
+    <!-- Performance -->
+    <rule ref="category/java/performance.xml/AvoidInstantiatingObjectsInLoops"/>
 
-    <!-- Rule to ensure proper usage of constants instead of magic values -->
-    <rule ref="category/java/design.xml/AvoidUsingHardCodedIP"/>
+    <!-- Security -->
+    <rule ref="category/java/security.xml/AvoidHardCodedPasswords"/>
+
+    <!-- Multithreading -->
+    <rule ref="category/java/multithreading.xml/AvoidThreadGroup"/>
 </ruleset>
