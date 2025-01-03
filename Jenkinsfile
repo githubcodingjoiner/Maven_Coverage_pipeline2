@@ -6,7 +6,9 @@ pipeline {
 
     environment {
         SONARQUBE_SERVER = 'sonarqube'  // Ensure SonarQube server is configured correctly in Jenkins
+        WEBDRIVER_PATH = 'C:\\Program Files\\chromedriver\\chromedriver.exe' 
     }
+    
 
     stages {
         stage('Checkout') {
