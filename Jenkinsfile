@@ -17,17 +17,13 @@ pipeline {
 
         stage('Build and Test') {
             steps {
-                bat '''
-                mvn clean test
-                '''
+                bat 'mvn clean test'
             }
         }
 
         stage('Coverage Analysis') {
             steps {
-                bat '''
-                mvn jacoco:report
-                '''
+                bat 'mvn jacoco:report'
             }
         }
 
@@ -36,7 +32,7 @@ pipeline {
                 SONAR_TOKEN = credentials('sonar-token') // Accessing the SonarQube token
             }
             steps {
-                bat '''
+                bat """
                 mvn sonar:sonar ^
                 -Dsonar.projectKey=Maven_Coverage ^
                 -Dsonar.sources=src/main/java ^
@@ -44,7 +40,7 @@ pipeline {
                 -Dsonar.projectName="Maven_Coverage" ^
                 -Dsonar.host.url=http://localhost:9000 ^
                 -Dsonar.token=%SONAR_TOKEN%
-                '''
+                """
             }
         }
     }
