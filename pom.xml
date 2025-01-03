@@ -41,7 +41,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Jacoco -->
+        <!-- JaCoCo -->
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>org.jacoco.agent</artifactId>
