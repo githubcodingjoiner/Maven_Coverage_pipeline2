@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     tools {
@@ -19,8 +18,14 @@ pipeline {
         stage('Build and Test') {
             steps {
                 bat '''
-                echo "Running tests with Jacoco coverage using Maven..."
-                mvn clean verify
+                mvn clean test
+                '''
+            }
+        }
+        stage('Coverage Analysis') {
+            steps {
+                bat '''
+                mvn jacoco:report
                 '''
             }
         }
@@ -38,10 +43,6 @@ pipeline {
                 -Dsonar.projectName="Maven_Coverage" ^
                 -Dsonar.host.url=http://localhost:9000 ^
                 -Dsonar.token=%SONAR_TOKEN% ^
-                -Dsonar.inclusions="src/main/java/**/*.java" ^
-                -Dsonar.exclusions="src/test/java/**/*.java" ^
-                -Dsonar.coverage.jacoco.xmlReportPaths=target/jacoco/jacoco.xml ^
-                -Dsonar.java.binaries=target/classes
                 '''
                  }
         }
